@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // FLEX LAYOUT AND ANGULAR MATERIAL
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
+import { FormsModule } from '@angular/forms';
 
 // ROUTES
 import { HeroesRoutingModule } from './heroes-routing.module';
@@ -30,6 +31,7 @@ import { ImagenPipe } from './pipes/imagen.pipe';
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     MaterialModule,
     HeroesRoutingModule
   ]

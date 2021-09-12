@@ -35,5 +35,13 @@ export class HeroesService {
     return this.http.get<Heore>(`${ this.baseUrl }/heroes/${ id }`);
   }
 
+  /**
+   * FUNTION RETURN THE SUGGESTIONS OF SEARCH COMPONENTS
+   * @param term 
+   * @returns 
+   */
+  getSuggestions( term: string ): Observable<Heore[]>{
+    return this.http.get<Heore[]>( `${ this.baseUrl }/heroes?q=${ term }&_limit=6`);
+  }
 
 }
