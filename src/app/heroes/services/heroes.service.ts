@@ -36,12 +36,29 @@ export class HeroesService {
   }
 
   /**
-   * FUNTION RETURN THE SUGGESTIONS OF SEARCH COMPONENTS
+   * FUNCTION RETURN THE SUGGESTIONS OF SEARCH COMPONENTS
    * @param term 
    * @returns 
    */
   getSuggestions( term: string ): Observable<Heore[]>{
     return this.http.get<Heore[]>( `${ this.baseUrl }/heroes?q=${ term }&_limit=6`);
   }
+
+  /**
+   * FUNCTION SET A NEW HERO IN DB 
+   * @param hero 
+   * @returns 
+   */
+  setNewHero(hero: Heore):Observable<Heore>{
+      return this.http.post<Heore>(`${ this.baseUrl}/heroes`, hero );
+  }
+
+
+  updateHero(hero: Heore):Observable<Heore>{
+      return this.http.put<Heore>(`${ this.baseUrl}/heroes/${ hero.id }`, hero );
+  }
+
+
+  
 
 }
