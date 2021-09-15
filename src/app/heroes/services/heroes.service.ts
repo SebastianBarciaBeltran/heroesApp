@@ -49,7 +49,7 @@ export class HeroesService {
    * @param hero 
    * @returns 
    */
-  setNewHero(hero: Heore):Observable<Heore>{
+  setNewHero(hero: Heore): Observable<Heore>{
       return this.http.post<Heore>(`${ this.baseUrl}/heroes`, hero );
   }
 
@@ -59,12 +59,12 @@ export class HeroesService {
    * @param hero 
    * @returns 
    */
-  updateHero(hero: Heore):Observable<Heore>{
+  updateHero(hero: Heore): Observable<Heore>{
       return this.http.put<Heore>(`${ this.baseUrl}/heroes/${ hero.id }`, hero );
   }
 
 
-  deleteHero( id: string ):Observable<any>{
+  deleteHero( id: string ): Observable<any>{
     return this.http.delete<any>(`${ this.baseUrl }/heroes/${ id }`);
   }
 
