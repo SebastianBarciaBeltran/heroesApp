@@ -54,8 +54,18 @@ export class HeroesService {
   }
 
 
+  /**
+   * FUNCTION THAT UPDATE A HERO
+   * @param hero 
+   * @returns 
+   */
   updateHero(hero: Heore):Observable<Heore>{
       return this.http.put<Heore>(`${ this.baseUrl}/heroes/${ hero.id }`, hero );
+  }
+
+
+  deleteHero( id: string ):Observable<any>{
+    return this.http.delete<any>(`${ this.baseUrl }/heroes/${ id }`);
   }
 
 
